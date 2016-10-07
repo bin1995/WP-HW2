@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>作業二-圖書館借書系統</title>
+	<script type="text/javascript">
+		function display(){
+			var form=document.getElementById("book_form");
+			var js_bookName =  form.bookName.value;
+			var js_userName =  form.userName.value;
+			for(var i=0;i<form.gender.length;i++){
+				if(form.gender[i].checked){
+					var js_gender=form.gender[i].value;
+				}
+			}
+			var js_department = form.department.value;
+			alert("書名:"+js_bookName+"\n姓名:"+js_userName+"\n性別:"+js_gender+"\n學系:"+js_department+"\n\n借書成功!");
+		}
+	</script>
+</head>
+<body>
+	<form style="text-align :center;" id="book_form">
+		<h1 >圖書館借書系統</h1>
+		書名:
+		<input type="text" name="bookName" value="Web Programming">
+		<br><br>
+		姓名:
+		<input type="text" name="userName" value="陳錫民">
+		<br><br>
+		性別:
+		<label>
+			<input type="radio" name="gender" value="male">
+			男
+		</label>
+		<label>
+			<input type="radio" name="gender" value="female" checked>
+			女
+		</label>
+		<br><br>
+		學系:
+		<label>
+			<select name="department">
+				<option selected>資工</option>
+				<option>電機</option>
+				<option>通訊</option>
+			</select>
+		</label>
+		<br><br>
+		<input type="submit" value="借書" onclick="display()">
+		<input type="reset" value="重創">
+
+	</form>
+
+</body>
+</html>
